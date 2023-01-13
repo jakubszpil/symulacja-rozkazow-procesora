@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projekt zaliczeniowy</title>
+    
+    <script type="module" crossorigin src="/assets/index-c4de95dd.js"></script>
+    <link rel="stylesheet" href="/assets/index-3e513068.css">
+  </head>
+  <body>
+    <header class="bg-zinc-200 py-6">
+      <div class="container">
+        <h1 class="font-bold text-2xl mb-6">
+          Projekt zaliczeniowy - symulator rozkazów MOV i XCHG
+        </h1>
+        <p class="font-medium text-zinc-600">
+          Przedmiot: Architektura Systemów Komputerowych
+        </p>
+      </div>
+    </header>
+    <main class="container grid-flow-row grid lg:grid-cols-4 gap-6">
+      <form id="form" class="col-span-3 grid grid-flow-row gap-3 h-max">
+        <div class="grid grid-flow-row gap-3">
+          <div class="flex gap-3 items-center flex-wrap">
+            <label class="flex items-center gap-3" for="ax">
+              <span class="w-max">Rejestr AX: </span>
+              <input
+                class="register w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                name="ax"
+                id="ax"
+                type="text"
+                maxlength="4"
+              />
+            </label>
+            <div class="flex items-center gap-3">
+              <button
+                type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
+                data-reset="ax"
+              >
+                reset
+              </button>
+
+              <button
+                type="button"
+                class="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 dark:bg-blue-600 dark:hover:bg-blue-500 focus:outline-none dark:focus:ring-blue-600 uppercase"
+                data-random="ax"
+              >
+                random
+              </button>
+            </div>
+          </div>
+          <div class="flex gap-3 items-center flex-wrap">
+            <label class="flex items-center gap-3" for="bx">
+              <span class="w-max">Rejestr BX: </span>
+              <input
+                class="register w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                name="bx"
+                id="bx"
+                type="text"
+                maxlength="4"
+              />
+            </label>
+            <div class="flex items-center gap-3">
+              <button
+                type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
+                data-reset="bx"
+              >
+                reset
+              </button>
+
+              <button
+                type="button"
+                class="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 dark:bg-blue-600 dark:hover:bg-blue-500 focus:outline-none dark:focus:ring-blue-600 uppercase"
+                data-random="bx"
+              >
+                random
+              </button>
+            </div>
+          </div>
+          <div class="flex gap-3 items-center flex-wrap">
+            <label class="flex items-center gap-3" for="cx">
+              <span class="w-max">Rejestr CX: </span>
+              <input
+                class="register w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                name="cx"
+                id="cx"
+                type="text"
+                maxlength="4"
+              />
+            </label>
+            <div class="flex items-center gap-3">
+              <button
+                type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
+                data-reset="cx"
+              >
+                reset
+              </button>
+
+              <button
+                type="button"
+                class="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 dark:bg-blue-600 dark:hover:bg-blue-500 focus:outline-none dark:focus:ring-blue-600 uppercase"
+                data-random="cx"
+              >
+                random
+              </button>
+            </div>
+          </div>
+          <div class="flex gap-3 items-center flex-wrap">
+            <label class="flex items-center gap-3" for="dx">
+              <span class="w-max">Rejestr DX: </span>
+              <input
+                class="register w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                name="dx"
+                id="dx"
+                type="text"
+                maxlength="4"
+              />
+            </label>
+            <div class="flex items-center gap-3">
+              <button
+                type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
+                data-reset="dx"
+              >
+                reset
+              </button>
+
+              <button
+                type="button"
+                class="text-white bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 dark:bg-blue-600 dark:hover:bg-blue-500 focus:outline-none dark:focus:ring-blue-600 uppercase"
+                data-random="dx"
+              >
+                random
+              </button>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <div class="grid grid-flow-col gap-3 max-w-max">
+          <div class="col-span-3 grid grid-flow-row gap-3">
+            <span>Źródło</span>
+            <label class="flex items-center gap-3" for="source-ax">
+              <span>AX</span>
+              <input
+                class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                required
+                id="source-ax"
+                type="radio"
+                value="ax"
+                data-source="ax"
+                name="source"
+              />
+            </label>
+            <label class="flex items-center gap-3" for="source-bx">
+              <span>BX</span>
+              <input
+                class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                required
+                id="source-bx"
+                type="radio"
+                value="bx"
+                data-source="bx"
+                name="source"
+              />
+            </label>
+            <label class="flex items-center gap-3" for="source-cx">
+              <span>CX</span>
+              <input
+                class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                required
+                id="source-cx"
+                type="radio"
+                value="cx"
+                data-source="cx"
+                name="source"
+              />
+            </label>
+            <label class="flex items-center gap-3" for="source-dx">
+              <span>DX</span>
+              <input
+                class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                required
+                id="source-dx"
+                type="radio"
+                value="dx"
+                data-source="dx"
+                name="source"
+              />
+            </label>
+          </div>
+          <div class="col-span-3 grid grid-flow-row gap-3">
+            <span>Cel</span>
+            <label class="flex items-center gap-3" for="destination-ax">
+              <span>AX</span>
+              <input
+                class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                required
+                id="destination-ax"
+                type="radio"
+                value="ax"
+                data-destination="ax"
+                name="destination"
+              />
+            </label>
+            <label class="flex items-center gap-3" for="destination-bx">
+              <span>BX</span>
+              <input
+                class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                required
+                id="destination-bx"
+                type="radio"
+                value="bx"
+                data-destination="bx"
+                name="destination"
+              />
+            </label>
+            <label class="flex items-center gap-3" for="destination-cx">
+              <span>CX</span>
+              <input
+                class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                required
+                id="destination-cx"
+                type="radio"
+                value="cx"
+                data-destination="cx"
+                name="destination"
+              />
+            </label>
+            <label class="flex items-center gap-3" for="destination-dx">
+              <span>DX</span>
+              <input
+                class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"
+                required
+                id="destination-dx"
+                type="radio"
+                value="dx"
+                data-destination="dx"
+                name="destination"
+              />
+            </label>
+          </div>
+        </div>
+        <hr />
+        <div class="grid grid-flow-col gap-3 max-w-max">
+          <button
+            type="submit"
+            data-action="mov"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
+          >
+            mov
+          </button>
+          <button
+            type="submit"
+            data-action="xchg"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
+          >
+            xchg
+          </button>
+          <button
+            type="reset"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-3 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 uppercase"
+          >
+            Zresetuj formularz
+          </button>
+        </div>
+      </form>
+      <section id="history" class="flex flex-col gap-3"></section>
+    </main>
+    <footer class="bg-zinc-200 pt-16 pb-8 mt-16">
+      <div class="container flex justify-between items-center flex-wrap">
+        <p>Autor: Jakub Szpil</p>
+        <p>Wszelkie prawa zastrzeżone</p>
+      </div>
+    </footer>
+  </body>
+</html>
